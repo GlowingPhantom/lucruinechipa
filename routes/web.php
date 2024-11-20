@@ -5,7 +5,7 @@ use App\Controllers\ReviewController;
 use App\Controllers\UserController;
 use App\Models\Product;
 
-$app->redirect('/', '/orders');
+$app->redirect('/', '/products');
 
 $app->get('/orders', [OrderController::class, 'index']);
 $app->get('/orders/create', [OrderController::class, 'create']);
