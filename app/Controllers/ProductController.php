@@ -11,7 +11,7 @@ class ProductController
     {
         $products = Product::all();
         ob_start();
-        require '../views/index.view.php';
+        require '../views/products/index.view.php';
         $html = ob_get_clean();
         $response->getBody()->write($html);
         return $response;
@@ -20,7 +20,7 @@ class ProductController
     public function create(Request $request, Response $response, $args)
     {
         ob_start();
-        require '../views/create.view.php'; 
+        require '../views/products/create.view.php'; 
         $html = ob_get_clean();
         $response->getBody()->write($html);
         return $response;
@@ -40,7 +40,7 @@ class ProductController
     {
         $product = Product::find($args['id']);
         ob_start();
-        require '../views/edit.view.php';
+        require '../views/products/edit.view.php';
         $html = ob_get_clean();
         $response->getBody()->write($html);
         return $response;
@@ -70,7 +70,7 @@ class ProductController
     {
         $product = Product::find($args['id']);
         ob_start();
-        require '../views/show.view.php';
+        require '../views/products/show.view.php';
         $html = ob_get_clean();
         $response->getBody()->write($html);
         return $response;

@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Lista de Produse Apicole</h1>
-    <a href="/reviews/create">Adaugă un produs nou</a>
+    <a href="/products/create">Adaugă un produs nou</a>
     <ul>
     <ul>
     <?php if (!empty($products)): ?>

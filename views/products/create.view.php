@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Adaugă un produs nou</h1>
-    <form method="POST" action="/orders/store">
+    <form method="POST" action="/products/store">
         <label for="name">Nume:</label>
         <input type="text" name="name" required><br>
         <label for="description">Descriere:</label>
