@@ -10,7 +10,7 @@
 
 <body>
     <div class="container mt-5">
-        <?php if ($product): ?>
+        <?php if ($products): ?>
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
@@ -20,15 +20,15 @@
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo htmlspecialchars($product->nume); ?></h5>
                                     <p class="card-text"><strong>Description:</strong>
-                                        <?php echo nl2br(htmlspecialchars($product->description)); ?></p>
+                                        <?php echo nl2br(htmlspecialchars($product->descriere)); ?></p>
                                     <p class="card-text"><strong>Price:</strong>
-                                        $<?php echo number_format($product->price, 2); ?></p>
+                                        $<?php echo number_format($product->pret, 2); ?></p>
                                         <p class="card-text"><strong>Stoc:</strong>
-                                        $<?php echo number_format($product->stock, 2); ?></p>
+                                        $<?php echo number_format($product->stoc, 2); ?></p>
                                         <p class="card-text"><strong>Type:</strong>
-                                        <?php echo nl2br(htmlspecialchars($product->type)); ?></p>
+                                        <?php echo nl2br(htmlspecialchars($product->tip)); ?></p>
                                         <p class="card-text"><strong>Benifits:</strong>
-                                        <?php echo nl2br(htmlspecialchars($product->benefits)); ?></p>
+                                        <?php echo nl2br(htmlspecialchars($product->beneficii)); ?></p>
                                     <a href="#" class="btn btn-primary btn-sm">Buy Now</a>
                                 </div>
                             </div>

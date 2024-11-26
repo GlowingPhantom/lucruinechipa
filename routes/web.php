@@ -27,5 +27,7 @@ $app->delete('/users/delete/{id}', [UserController::class, 'delete']);
 $app->get('/products', [ProductController::class, 'index']);
 $app->get('/products/create', [ProductController::class, 'create']);
 $app->post('/products/store', [ProductController::class, 'store']);
+$app->get('/products/{id}/edit', [ProductController::class, 'edit']);
+$app->post('/products/{id}', [ProductController::class, 'update']);
 $app->get('/products/show/{id}', [ProductController::class, 'show']);
 $app->delete('/products/delete/{id}', [ProductController::class, 'delete']);

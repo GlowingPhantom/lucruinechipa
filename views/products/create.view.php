@@ -11,7 +11,7 @@
 <body>
     <div class="container mt-5">
         <h1>Adaugă un produs nou</h1>
-        <form method="GET" action="/products/store">
+        <form method="POST" action="/products/store">
             <div class="mb-3">
                 <label for="nume" class="form-label">Nume:</label>
                 <input type="text" name="nume" id="nume" class="form-control" required>

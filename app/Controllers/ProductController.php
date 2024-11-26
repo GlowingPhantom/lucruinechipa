@@ -32,13 +32,16 @@ class ProductController
         $data = $request->getParsedBody();
         Product::create($data);
         return $response
-            ->withHeader('Location', '/views')
+            ->withHeader('Location', '/products')
             ->withStatus(302);
     }
 
     public function edit(Request $request, Response $response, $args)
     {
+        // Retrieve the product to edit
         $product = Product::find($args['id']);
+
+        // Render the edit view with the product data
         ob_start();
         require '../views/products/edit.view.php';
         $html = ob_get_clean();
@@ -48,22 +51,45 @@ class ProductController
 
     public function update(Request $request, Response $response, $args)
     {
-        $data = $request->getParsedBody();
+        // Retrieve the product to update
         $product = Product::find($args['id']);
-        $product->fill($data);
+
+        // Get the form data
+        $data = $request->getParsedBody();
+
+        // Update the product's attributes
+        $product->nume = $data['nume'];
+        $product->descriere = $data['descriere'];
+        $product->pret = $data['pret'];
+        $product->stoc = $data['stoc'];
+        $product->tip = $data['tip'];
+        $product->beneficii = $data['beneficii'];
+
+        // Save the updated product
         $product->save();
+
+        // Redirect to the products list with a success message
         return $response
-            ->withHeader('Location', '/views')
-            ->withStatus(302);
+            ->withHeader('Location', '/products')
+            ->withStatus(302); // 302 for redirect
     }
 
     public function delete(Request $request, Response $response, $args)
-    {   
+    {
+
         $product = Product::find($args['id']);
-        $product->delete();
+
+        if ($product) {
+            // Delete the product
+            $product->delete();
+            return $response
+                ->withHeader('Location', '/products')
+                ->withStatus(302);  // 302 redirect
+        }
+
         return $response
-            ->withHeader('Location', '/views')
-            ->withStatus(302);
+            ->withHeader('Location', '/products')
+            ->withStatus(404);  // 404 Not Found
     }
     
     public function show(Request $request, Response $response, $args)

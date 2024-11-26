@@ -4,12 +4,12 @@
     <title><?= $product->name; ?></title>
 </head>
 <body>
-    <h1><?= $product->name; ?></h1>
-    <p><?= $product->description; ?></p>
-    <p>Preț: <?= $product->price; ?> lei</p>
-    <p>Stoc: <?= $product->stock; ?> buc</p>
-    <p>Tip: <?= $product->type; ?></p>
-    <p>Beneficii: <?= $product->benefits; ?></p>
+    <h1><?= $product->nume; ?></h1>
+    <p><?= $product->descriere; ?></p>
+    <p>Preț: <?= $product->pret; ?> lei</p>
+    <p>Stoc: <?= $product->stoc; ?> buc</p>
+    <p>Tip: <?= $product->tip; ?></p>
+    <p>Beneficii: <?= $product->beneficii; ?></p>
     <a href="/products">Înapoi la produse</a>
 </body>
 </html>

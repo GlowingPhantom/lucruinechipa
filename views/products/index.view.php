@@ -11,11 +11,12 @@
     <?php if (!empty($products)): ?>
         <?php foreach ($products as $product): ?>
             <li>
-                <a href="/products/<?= $product->id; ?>"><?= htmlspecialchars($product->nume); ?></a> 
+                <a href="/products/store<?= $product->id; ?>"><?= htmlspecialchars($product->nume); ?></a> 
                 - <?= htmlspecialchars($product->pret); ?> lei
                 <a href="/products/<?= $product->id; ?>/edit">Editează</a>
-                <form method="POST" action="/products/<?= $product->id; ?>/delete" style="display:inline;">
-                    <button type="submit">Șterge</button>
+                  <form action="products/delete/<?= $product->id ?>" method="post" onclick="return confirm(`Esti sigur?`)">
+                    <input type="hidden" name="_METHOD" value="DELETE">
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                 </form>
             </li>
         <?php endforeach; ?>
