@@ -70,7 +70,7 @@ class ProductController
     {
         $product = Product::find($args['id']);
         ob_start();
-        require '../views/products/show.view.php';
+        require '../views/products/store.view.php';
         $html = ob_get_clean();
         $response->getBody()->write($html);
         return $response;

@@ -18,7 +18,7 @@
                             <!-- Imaginea cărții (poți lăsa un loc de imagine implicit) -->
                             <div class="col-md-12">
                                 <div class="card-body">
-                                    <h5 class="card-title"><?php echo htmlspecialchars($product->name); ?></h5>
+                                    <h5 class="card-title"><?php echo htmlspecialchars($product->nume); ?></h5>
                                     <p class="card-text"><strong>Description:</strong>
                                         <?php echo nl2br(htmlspecialchars($product->description)); ?></p>
                                     <p class="card-text"><strong>Price:</strong>
