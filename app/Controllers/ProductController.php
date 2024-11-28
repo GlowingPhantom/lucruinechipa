@@ -92,13 +92,21 @@ class ProductController
             ->withStatus(404);  // 404 Not Found
     }
     
-    public function show(Request $request, Response $response, $args)
-    {
-        $product = Product::find($args['id']);
-        ob_start();
-        require '../views/products/store.view.php';
-        $html = ob_get_clean();
-        $response->getBody()->write($html);
-        return $response;
+public function show(Request $request, Response $response, $args)
+{
+    $product = Product::find($args['id']);
+    
+    if (!$product) {
+        return $response->withStatus(404);
     }
+    ob_start();
+
+    require '../views/products/store.view.php';
+
+    $html = ob_get_clean();
+
+    $response->getBody()->write($html);
+
+    return $response;
+}
 }

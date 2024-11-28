@@ -10,12 +10,11 @@
 
 <body>
     <div class="container mt-5">
-        <?php if ($products): ?>
+        <?php if ($product): ?>
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
                         <div class="row g-0">
-                            <!-- Imaginea cărții (poți lăsa un loc de imagine implicit) -->
                             <div class="col-md-12">
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo htmlspecialchars($product->nume); ?></h5>
@@ -38,7 +37,7 @@
             </div>
         <?php else: ?>
             <div class="alert alert-danger" role="alert">
-                Sorry, the book you are looking for could not be found.
+                Nu o fost gasit asa produs!
             </div>
         <?php endif; ?>
     </div>

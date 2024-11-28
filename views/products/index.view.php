@@ -11,7 +11,7 @@
     <?php if (!empty($products)): ?>
         <?php foreach ($products as $product): ?>
             <li>
-                <a href="/products/store<?= $product->id; ?>"><?= htmlspecialchars($product->nume); ?></a> 
+                <a href="/products/show/<?= $product->id; ?>"><?= htmlspecialchars($product->nume); ?></a> 
                 - <?= htmlspecialchars($product->pret); ?> lei
                 <a href="/products/<?= $product->id; ?>/edit">Editează</a>
                   <form action="products/delete/<?= $product->id ?>" method="post" onclick="return confirm(`Esti sigur?`)">
