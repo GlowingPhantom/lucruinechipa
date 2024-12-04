@@ -5,17 +5,18 @@
 </head>
 <body>
     <h1>Lista de Produse Apicole</h1>
-    <a href="/reviews/create">Adaugă un produs nou</a>
+    <a href="/products/create">Adaugă un produs nou</a>
     <ul>
     <ul>
     <?php if (!empty($products)): ?>
         <?php foreach ($products as $product): ?>
             <li>
-                <a href="/products/<?= $product->id; ?>"><?= htmlspecialchars($product->name); ?></a> 
-                - <?= htmlspecialchars($product->price); ?> lei
+                <a href="/products/show/<?= $product->id; ?>"><?= htmlspecialchars($product->nume); ?></a> 
+                - <?= htmlspecialchars($product->pret); ?> lei
                 <a href="/products/<?= $product->id; ?>/edit">Editează</a>
-                <form method="POST" action="/products/<?= $product->id; ?>/delete" style="display:inline;">
-                    <button type="submit">Șterge</button>
+                  <form action="products/delete/<?= $product->id ?>" method="post" onclick="return confirm(`Esti sigur?`)">
+                    <input type="hidden" name="_METHOD" value="DELETE">
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                 </form>
             </li>
         <?php endforeach; ?>
